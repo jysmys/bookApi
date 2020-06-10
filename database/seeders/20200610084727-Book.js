@@ -11,7 +11,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          title: "Learn Sequilize with Adi",
+          title: "Learn Sequelize with Adi",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
