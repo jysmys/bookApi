@@ -1,5 +1,5 @@
 module.exports = (factory, Models) => {
-  const normalizedPath = require("path").join(_dirname, ".");
+  const normalizedPath = require("path").join(__dirname, ".");
   require("fs")
     .readdirSync(normalizedPath)
     .forEach((file) => {
