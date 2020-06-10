@@ -3,10 +3,12 @@ module.exports = (sequelize, DataTypes) => {
   const Book = sequelize.define(
     "Book",
     {
-      title: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        noEmpty: { args: true, msg: "You need to set a title!" },
+      title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: { msg: "You need to set a title!" },
+        },
       },
     },
     {}
