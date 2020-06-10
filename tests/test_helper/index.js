@@ -12,11 +12,13 @@ factory.setAdapter(adapter);
 factory.cleanUp();
 factory.factories = [];
 
-require("../factories")(factory, Models);
 const Models = require("../../models");
+require("../factories/bookFactory")(factory, Models);
 
 beforeEach((done) => {
-  // Models.sequelize.sync({ force: true }).then()=>{
-
-  // };
+  Models.sequelize.sync({ force: true }).then(() => {
+    done();
+  });
 });
+
+module.exports = { factory, Models, expect };
