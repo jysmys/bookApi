@@ -1,6 +1,6 @@
 const app = require("../app");
 const supertest = require("supertest");
-const { factory, expect } = require("../tests/test_helper");
+const { factory, expect } = require("./test_helper");
 const jsonResponse = require("./jsonResponse");
 
 let server, request, response;
@@ -15,11 +15,11 @@ after((done) => {
 });
 
 beforeEach(async () => {
-  const Author = await factory.create("Author", { id: 100, name: "Jenny" });
+  const author = await factory.create("Author", { id: 100, name: "Gabriel" });
 
   await factory.createMany("Book", 2, [
-    { id: 1, title: "The Bible", authorId: Author.id },
-    { id: 2, title: "The Quran", authorId: Author.id },
+    { id: 1, title: "The Bible", authorId: author.id },
+    { id: 2, title: "The Quran", authorId: author.id },
   ]);
 });
 

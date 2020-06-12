@@ -13,7 +13,7 @@ factory.cleanUp();
 factory.factories = [];
 
 const Models = require("../../models");
-require("../factories/bookFactory")(factory, Models);
+require("../factories")(factory, Models);
 
 beforeEach((done) => {
   Models.sequelize.sync({ force: true }).then(() => {
