@@ -1,7 +1,6 @@
 module.exports = (factory, Models) => {
   factory.define("Book", Models.Book, {
-    title: "FooBar",
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    title: "Foo",
+    authorId: factory.assoc("Author", "id"),
   });
 };

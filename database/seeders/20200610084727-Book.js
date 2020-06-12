@@ -1,7 +1,12 @@
 "use strict";
 
+const models = require("../../models");
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
+    const thomas = models.Author.create({ name: "Thomas" });
+    const jenny = models.Author.create({ name: "Jenny" });
+
     await queryInterface.bulkInsert(
       "Books",
       [
