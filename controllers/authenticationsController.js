@@ -1,9 +1,9 @@
 const jwt = require("jsonwebtoken");
 const salt = "thisismyfuckingsecret";
 const authenticationsController = {
-  login: async (req, res) => {
+  login(req, res) {
     const payload = req.body;
-    const token = await jwt.sign(payload, salt);
+    const token = jwt.sign(payload, salt, { expiresIn: 36000 });
     res.send({ token: `Bearer ${token}` });
   },
 };
